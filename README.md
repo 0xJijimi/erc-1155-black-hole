@@ -1,66 +1,15 @@
-## Foundry
+## ERC-1155 BLACK HOLE
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+The ERC1155BlackHole contract is a simple implementation designed to permanently receive and hold ERC1155 tokens. It has the following features:
 
-Foundry consists of:
+- Acts as an ERC1155 token receiver
+- Prevents accidental sending of non-ERC1155 tokens (including Ether)
+- Immutable design with no ability to withdraw or transfer received tokens
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+This contract can be used as a "black hole" for burning or permanently locking ERC1155 tokens.
 
-## Documentation
+## Deploy
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
 ```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+$ forge create ERC1155BlackHole --rpc-url <testnet-or-mainnet-url> --interactive
 ```
